@@ -1,12 +1,9 @@
-require 'pry'
-
-def hello(array)
+def my_collect(collection)
   i = 0
-  while i < array.length
-    yield(array[i])
+  new_collection = []
+  while i < collection.length
+    new_collection << yield(collection[i])
     i += 1
   end
+  new_collection
 end
-
-
-hello(["Tim", "Tom", "Jim"]) { |name| puts "Hi, #{name}" }
